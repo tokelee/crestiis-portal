@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="{% static 'core/css/tailwindmain.min.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/essential.css' %}">
+    {% block head %}
+   
+    {% endblock head %}
+    <script src="{% static 'core/js/essential.js' %}"></script>
+    
+</head>
+
+<body>
+    
+     {%if messages%}
+     <ul class="messages text-center">
+        {%for message in messages%}
+        <li {%if message.tags%} class="{{message.tags}}" {%endif%}>
+            {{message}}
+        </li>
+        {%endfor%}
+    </ul>
+    {%endif%}
+    {% block body %}
+   
+
+    {% endblock body %}
+
+    <script>
+        const inputs = document.querySelectorAll("input[required]");
+
+inputs.forEach(input => {
+    input.addEventListener("blur", () => {
+        if(!input.value.trim()){
+            input.style.border = "2px solid #e00007"
+        }
+        else if(input.checkValidity()){
+            input.style.border = "2px solid green"
+        }else{
+            input.style.border = "2px solid #e00007"
+        }
+    })
+})
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+{% extends '../base.html' %}
+{% load static %}
+
+{% block head %}
+   <title>{{onboard_type}} Registration Successful | Crest Islamic Internation School</title>
+    {% endblock head %}
+
+{% block body %}
+
+<div class="auth-container-wrapper flex items-center justify-center min-h-screen w-full">
+    <div class="auth-container py-5 px-10" style="width: 400px;">
+
+        <img class="mx-auto mb-5" width="170px" src="{% static 'core/images/partnership.png' %}" alt="">
+        <p class="text-center font-bold text-lg my-2">Welcome</p>
+        <p class="text-center font-bold text-lg my-2">We're glad you're here</p>
+        
+        {% if onboard_type == 'student'%}
+        <p class="text-center my-2">
+            Your application is being processed. Once approved, your admission number and login details will be sent to
+            your email address.
+        </p>
+        {%endif%}
+
+        {% if onboard_type == "parent"%}
+        <p class="text-center text-lg my-2">
+            Your submission is presently under review. We will notify you via the email address you provided once
+            approval is complete.
+           <br> <br>
+            If you require further assistance, please reach out to our admissions team.
+        </p>
+        {%endif%}
+ 
+        {% if onboard_type == "admin"%}
+        <p class="text-center text-lg my-2">
+            Your application is being processed. You will receive an email notification once your account is approved.
+        </p>
+        {%endif%}
+        
+        <p class="text-center">See <a class="text-blue-600 font-bold underline" href="">Our mission and vision</a></p>
+        <br>
+        <div class="flex">
+        <a href="/" style="width: 100%;" class="px-5 my-3 py-3 theme-bg hover-secondary-theme-bg text-white font-bold text-sm rounded text-center">Go home</a>
+        <div class="mx-3"></div>
+        <a href="{%url 'choose-register-type'%}" style="width: 100%;" class="px-5 my-3 py-3 theme-bg hover-secondary-theme-bg text-white font-bold text-sm rounded text-center">Register</a>
+        </div>
+        <!-- <p>Not a teacher? <a class="theme-color font-bold underline" href="{% url 'choose-register-type' %}">Go back</a></p> -->
+    </div>
+</div>
+
+{% endblock body %}

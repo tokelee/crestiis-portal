@@ -1,0 +1,63 @@
+{% extends '../base.html' %}
+{% load static %}
+
+{% block head %}
+   <title>Teacher/Admin Registration | Crest Islamic Internation School</title>
+    {% endblock head %}
+
+{% block body %}
+
+<div class="auth-container-wrapper flex items-center justify-center min-h-screen w-full">
+    <div class="auth-container py-5 px-10" style="width: 400px;">
+    
+    <img class="mx-auto" width="170px" src="{% static 'core/images/ciis-no-bg.png' %}" alt="">
+    <p class="text-center font-bold text-lg my-2">Teacher/Admin Registration</p>
+    <form action="" method="post">
+        {% csrf_token %}
+
+        <div class="flex">
+        <div class=" w-5/5">
+            <label for="first_name">First name</label>
+            <input id="first_name" class="rounded" required type="text" name="first_name" >
+        </div>
+        <div class="mx-1"></div>
+        <div class=" w-5/5">
+            <label for="last_name">Last name</label>
+            <input id="last_name" class="rounded" required type="text" name="last_name" >
+        </div>
+        </div>
+        <div class=" w-5/5">
+            <label for="email">Email</label>
+            <input id="email" class="rounded" required type="text" name="email" >
+        </div>
+        <div class=" w-5/5">
+            <label for="phone_number">Phone number</label>
+            <input id="phone_number" class="rounded" required type="tel" name="phone_number" >
+        </div>
+        
+         <div class=" w-5/5">
+            <label for="gender">Gender</label>
+            <select required class="rounded" name="gender" id="gender">
+                <option value="">Choose an option</option>
+                <option value="MALE">Male</option>
+                <option value="FEMALE">Female</option>
+            </select>
+            
+        </div>
+        
+        <div class="input-field">
+            <label for="password">Password</label>
+            <input required class="rounded" type="password" placeholder="********" name="password" id="password">
+        </div>
+        <div class="my-5 flex items-start">
+            <input required type="checkbox">
+            <p class="ml-1" style="margin-top: -6px;">I accept the Crest Islamic International School <a class="underline" href="">rules and regulations</a></p>
+        </div>
+        <button style="width: 100%;" class="my-3 py-3 theme-bg hover-secondary-theme-bg text-white font-bold text-sm rounded">Register</button>
+        
+    </form>
+    <p>Not a teacher? <a class="theme-color font-bold underline" href="{% url 'choose-register-type' %}">Go back</a></p>
+</div>
+</div>
+
+{% endblock body %}

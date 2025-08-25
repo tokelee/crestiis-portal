@@ -1,0 +1,32 @@
+{% extends './base.html' %}
+{% load static %}
+
+{% block head %}
+   <title>Student Login | Crest Islamic Internation School</title>
+    {% endblock head %}
+
+{% block body %}
+
+<div class="auth-container-wrapper flex items-center justify-center h-screen w-full">
+    <div class="auth-container py-5 px-10" style="width: 400px;">
+    
+    <img class="mx-auto" width="170px" src="{% static 'core/images/ciis-no-bg.png' %}" alt="">
+    <p class="text-center font-bold text-lg my-2">Student Login</p>
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="upper-input-field w-5/5">
+            <label for="user-id">Admission No</label>
+            <input class="rounded" type="text" placeholder="crest/000" name="user-id" id="user-id">
+        </div>
+        <div class="input-field">
+            <label for="password">Password</label>
+            <input class="rounded" type="password" placeholder="********" name="password" id="password">
+        </div>
+        <button style="width: 100%;" class="my-3 py-3 theme-bg hover-secondary-theme-bg text-white font-bold text-sm rounded">Login</button>
+        
+    </form>
+    <p>Not a student? <a class="theme-color font-bold underline" href="{% url 'choose-login-type-page' %}">Go back</a></p>
+</div>
+</div>
+
+{% endblock body %}

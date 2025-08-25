@@ -1,0 +1,76 @@
+{% extends './base.html' %}
+{% load static %}
+
+{% block head %}
+   <title>Choose Registration type | Crest Islamic Internation School</title>
+    {% endblock head %}
+
+{% block body %}
+
+<section>
+    <div style="height: 100vh" class="flex">
+
+        <div class="auth-content-section">
+
+            <div style="width: 100%">
+
+                <div class="flex justify-center">
+                    <img src="{% static 'core/images/ciis-no-bg.png' %}" alt="Crest Islamic International School" />
+                </div>
+
+                <div id="content" class="auth-content-container mt-3">
+
+                    <div class="flex items-center text-center justify-center w-full">
+                        <div class="w-80">
+                            <h1 class="text-2xl my-2">Register as</h1>
+                            <p>Choose one that describes you</p>
+
+                            <div>
+                                <a href="{% url 'student-register' %}">
+                                        <div class="role-cards my-5">
+                                            <div style="background-color: #222b4a; padding: 20px;">
+                                                <p class='font-bold'>I&#39;m a Student</p>
+                                                <p style="font-size:0.7rem">I want to access my portal</p>
+                                            </div>
+                                        </div>
+
+                                </a>
+
+                                <a href="{% url 'parent-register' %}">
+                                        <div class="role-cards my-5">
+                                            <div style="background-color: #894CEE; padding: 20px;">
+                                                <p class='font-bold'>I&#39;m a Parent</p>
+                                                <p style="font-size:0.7rem">I want to access my child's portal</p>
+                                            </div>
+                                        </div>
+                                </a>
+
+                                <a href="{% url 'teacher-register' %}">
+                                    <div class="role-cards my-5">
+                                        <div style="background-color: #1C5551; padding: 20px;">
+                                            <p class='font-bold'>I&#39;m an Admin</p>
+                                            <p style="font-size:0.7rem">I want to manage students' portal</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <p>Already have an account? <span style="color: #222b4a; font-weight: bold; text-decoration: underline;"> <a href="{% url 'choose-login-type-page' %}">Login instead</a></span></p>
+                            <!-- <a href="" style="">Go back</a> -->
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="auth-banner-image">
+        </div>
+
+
+    </div>
+
+</section>
+
+
+{% endblock body %}
