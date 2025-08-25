@@ -13,6 +13,9 @@ def choose_login_type_page(request):
 def choose_register_type_page(request):
     return render(request, "core/choose-register-type.html")
 
+def forgot_password(request):
+    return render(request, "core/forgot-password.html")
+
 def register_success(request):
     onboard_type = request.GET.get("onboard")
     return render(request, "core/register/success.html", {"onboard_type":onboard_type})

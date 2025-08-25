@@ -7,7 +7,7 @@
 
 {% block body %}
 
-<div class="auth-container-wrapper flex items-center justify-center h-screen w-full">
+<div class="auth-container-wrapper flex md:items-center justify-center h-screen w-full">
     <div class="auth-container py-5 px-10" style="width: 400px;">
     
     <img class="mx-auto" width="170px" src="{% static 'core/images/ciis-no-bg.png' %}" alt="">
@@ -15,13 +15,14 @@
     <form action="" method="post">
         {% csrf_token %}
         <div class="upper-input-field w-5/5">
-            <label for="user-id">Admission No</label>
-            <input class="rounded" type="text" placeholder="crest/000" name="user-id" id="user-id">
+            <label for="admission_number">Admission Number</label>
+            <input required class="rounded" type="text" placeholder="Enter Admission number" name="admission_number" id="admission_number">
         </div>
         <div class="input-field">
             <label for="password">Password</label>
-            <input class="rounded" type="password" placeholder="********" name="password" id="password">
+            <input required class="rounded" type="password" placeholder="********" name="password" id="password">
         </div>
+        <p><a class="theme-color font-bold underline" href="{% url 'forgot-password' %}">Forgot password?</a></p>
         <button style="width: 100%;" class="my-3 py-3 theme-bg hover-secondary-theme-bg text-white font-bold text-sm rounded">Login</button>
         
     </form>
