@@ -19,11 +19,11 @@
 }
 
 
-input:focus{
+input:focus {
     border: 2px solid var(--secondary-theme);
 }
 
-label.required::after{
+label.required::after {
     content: "*";
     color: red;
     font-weight: bold;
@@ -44,7 +44,7 @@ label.required::after{
     background-color: var(--secondary-theme);
 }
 
-.gend{
+.gend {
     padding: 9.5px !important;
 }
 
@@ -145,8 +145,8 @@ tr:nth-child(odd) {
 }
 
 @media only screen and (max-width: 850px) {
-   .auth-content-section {
-    margin-top: 20px;
+    .auth-content-section {
+        margin-top: 20px !important;
     }
 }
 
@@ -158,8 +158,8 @@ tr:nth-child(odd) {
     }
 
     .auth-content-section {
-    justify-content: center;
-}
+        justify-content: center;
+    }
 
     .auth-banner-image {
         height: 100vh;
@@ -171,7 +171,7 @@ tr:nth-child(odd) {
         background-image: url(../images/crest-front.jpg);
     }
 
-    .auth-content-section{
+    .auth-content-section {
         width: 50%;
     }
 }
@@ -179,5 +179,5 @@ tr:nth-child(odd) {
 .role-cards {
     width: 100%;
     color: white;
-    
+
 }
