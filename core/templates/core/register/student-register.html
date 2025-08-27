@@ -10,7 +10,7 @@
 <div class="auth-container-wrapper flex md:items-center justify-center min-h-screen w-full">
     <div class="auth-container py-5 px-10" style="width: 400px;">
     
-    <img class="mx-auto" width="170px" src="{% static 'core/images/ciis-no-bg.png' %}" alt="">
+    <img class="mx-auto" width="170px" src="{% static 'core/images/ciis-logo.jpg' %}" alt="">
     <p class="text-center font-bold text-lg my-2">Student Registration</p>
 
 
@@ -35,8 +35,8 @@
 
         </div>
         
-        <div class="flex">
-        <div class=" w-5/5">
+        <div class="">
+        <div class=" w-full">
             <label for="gender">Gender</label>
             <select required class="rounded gend" name="gender" id="gender">
                 <option value="">Choose an option</option>
@@ -44,8 +44,7 @@
                 <option value="FEMALE">Female</option>
             </select>
         </div>
-        <div class="mx-1"></div>
-        <div class=" w-5/5">
+        <div class=" w-full">
             <label for="dob">Date of birth</label>
             <input id="dob" required class="rounded" type="date" name="dob" >
         </div>
